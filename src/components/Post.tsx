@@ -6,9 +6,9 @@ import { Avatar } from './Avatar'
 import { Comment } from './Comment'
 import styles from './Post.module.css'
 
-export function Post({ author, content, publishAt }: PostProps) {
-    const publishedDateFormatted = format(publishAt, `d' de 'LLLL' à s 'H:mm'h'`, { locale: ptBR })
-    const publishedDateRelativeToNow = formatDistanceToNow(publishAt, {
+export function Post({ author, content, publishedAt }: PostProps) {
+    const publishedDateFormatted = format(publishedAt, `d' de 'LLLL' à s 'H:mm'h'`, { locale: ptBR })
+    const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
         locale: ptBR,
         addSuffix: true
     })
@@ -51,7 +51,7 @@ export function Post({ author, content, publishAt }: PostProps) {
                     </div>
                 </div>
 
-                <time title={publishedDateFormatted} dateTime={publishAt.toISOString()}>
+                <time title={publishedDateFormatted} dateTime={publishedAt.toISOString()}>
                     {publishedDateRelativeToNow}
                 </time>
             </header>

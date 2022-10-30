@@ -3,8 +3,9 @@ import { Post } from "./components/Post"
 import './global.module.css'
 import styles from './App.module.css'
 import { Sidebar } from "./components/Sidebar"
+import { PostProps } from "./contracts/Post"
 
-const posts = [
+const posts: PostProps[] = [
   {
     id: 1,
     author: {
@@ -42,7 +43,7 @@ export function App() {
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
-          {posts.map((post, index) => (<Post key={post.id} author={post.author} content={post.content} publishAt={post.publishedAt} />))}
+          {posts.map((post, index) => (<Post key={post.id} author={post.author} content={post.content} publishedAt={post.publishedAt} />))}
         </main>
       </div>
     </>

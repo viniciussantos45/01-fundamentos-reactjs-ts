@@ -10,7 +10,8 @@ export type Content = {
 };
 
 export type PostProps = {
+    id?: number;
     author: Author;
-    content: any;
-    publishAt: Date;
+    content: Content[];
+    publishedAt: Date;
 }
